@@ -1,14 +1,10 @@
 import React from 'react';
-import { SafeAreaView, Text } from 'react-native';
+import Routes from './routes';
 
 import './config/ReactotronConfig';
 
 function App() {
-  return (
-    <SafeAreaView>
-      <Text>Juliani</Text>
-    </SafeAreaView>
-  );
+  return <Routes />;
 }
 
 export default App;
