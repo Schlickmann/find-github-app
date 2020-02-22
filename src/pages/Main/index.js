@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Keyboard, ActivityIndicator } from 'react-native';
+import PropTypes from 'prop-types';
 import AsyncStorage from '@react-native-community/async-storage';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import api from '../../services/api';
@@ -72,6 +73,10 @@ export default function Main({ navigation }) {
     Keyboard.dismiss();
   }
 
+  function handleNavigate(user) {
+    navigation.navigate('User', { user });
+  }
+
   return (
     <Container>
       <Form>
@@ -101,7 +106,7 @@ export default function Main({ navigation }) {
             <Avatar source={{ uri: item.avatar }} />
             <Name>{item.name}</Name>
             <Bio>{item.bio}</Bio>
-            <ProfileButton onPress={() => navigation.navigate('User')}>
+            <ProfileButton onPress={() => handleNavigate(item)}>
               <ProfileButtonText>See Profile</ProfileButtonText>
             </ProfileButton>
           </User>
@@ -110,3 +115,9 @@ export default function Main({ navigation }) {
     </Container>
   );
 }
+
+Main.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func,
+  }).isRequired,
+};
