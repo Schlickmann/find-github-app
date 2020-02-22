@@ -33,8 +33,6 @@ export default function User({ navigation, route }) {
     setIsLoading(true);
     const response = await api.get(`/users/${user.login}/starred?page=${page}`);
 
-    console.tron.log(response.data[0]); // html_url
-
     setStarts([...stars, ...response.data]);
     setPage(page + 1);
     setIsLoading(false);
