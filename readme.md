@@ -8,6 +8,7 @@
 - [x] Styled-Components
 - [x] Github Api
 
-<div style="display: flex; justify-content: center;">
+
+<p align="center">
   <img src="./finduser.gif" height="600" />
-</div>
+</p>
