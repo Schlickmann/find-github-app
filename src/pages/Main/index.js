@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Keyboard } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import api from '../../services/api';
 import { Container, Form, Input, SubmitButton } from './styles';
@@ -25,6 +26,8 @@ export default function Main() {
 
     setUsernames([...usernames, data]);
     setNewUser('');
+
+    Keyboard.dismiss();
   }
 
   return (
