@@ -17,21 +17,30 @@ import {
 } from './styles';
 
 export default function User({ navigation, route }) {
+  const [page, setPage] = useState(1);
   const [stars, setStarts] = useState([]);
 
   const { user } = route.params;
 
   useEffect(() => {
-    async function loadUsersInfo() {
-      navigation.setOptions({ title: user.name });
+    navigation.setOptions({ title: user.name });
+    loadUsersInfo();
+  }, []);
 
-      const response = await api.get(`/users/${user.login}/starred`);
+  async function loadUsersInfo() {
+    const response = await api.get(`/users/${user.login}/starred?page=${page}`);
 
-      setStarts(response.data);
+    setStarts([...stars, ...response.data]);
+    setPage(page + 1);
+  }
+
+  function handleListEndReached() {
+    if (stars.length < 30) {
+      return;
     }
 
     loadUsersInfo();
-  }, []);
+  }
 
   return (
     <Container>
@@ -53,6 +62,7 @@ export default function User({ navigation, route }) {
             </Info>
           </Starred>
         )}
+        onEndReached={handleListEndReached}
       />
     </Container>
   );
