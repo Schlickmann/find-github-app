@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Keyboard, ActivityIndicator } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import api from '../../services/api';
 import {
@@ -21,7 +22,28 @@ export default function Main() {
   const [usernames, setUsernames] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    async function retrieveUsers() {
+      // AsyncStorage.clear();
+      const users = await AsyncStorage.getItem('users');
+
+      if (users) {
+        setUsernames(users);
+      }
+    }
+
+    retrieveUsers();
+  }, []);
+
+  useEffect(() => {
+    function saveUsers() {
+      if (usernames.length) {
+        AsyncStorage.setItem('users', JSON.stringify(usernames));
+      }
+    }
+
+    saveUsers();
+  }, [usernames]);
 
   function handleInpuChange(text) {
     setNewUser(text);
