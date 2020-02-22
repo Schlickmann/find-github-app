@@ -17,7 +17,7 @@ import {
   ProfileButtonText,
 } from './styles';
 
-export default function Main() {
+export default function Main({ navigation }) {
   const [newUser, setNewUser] = useState('');
   const [usernames, setUsernames] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -28,7 +28,7 @@ export default function Main() {
       const users = await AsyncStorage.getItem('users');
 
       if (users) {
-        setUsernames(users);
+        setUsernames(JSON.parse(users));
       }
     }
 
@@ -101,7 +101,7 @@ export default function Main() {
             <Avatar source={{ uri: item.avatar }} />
             <Name>{item.name}</Name>
             <Bio>{item.bio}</Bio>
-            <ProfileButton onPress={() => {}}>
+            <ProfileButton onPress={() => navigation.navigate('User')}>
               <ProfileButtonText>See Profile</ProfileButtonText>
             </ProfileButton>
           </User>
