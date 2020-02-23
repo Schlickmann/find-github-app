@@ -9,19 +9,6 @@
 - [x] Github Api
 
 
-<p align="center">
-  <p align="center">
-    <figure>
-      <img src="./readme/iosfinduser.gif" height="600" />
-      <figcaption>IOS Version</figcaption>
-    </figure>
-  </p>
-    &nbsp;&nbsp;
-  
-  <p align="center">
-    <figure>
-      <img src="./readme/androidfinduser.gif" height="600" />
-      <figcaption>Android Version</figcaption>
-    </figure>
-  </p>
-</p>
+IOS | ANDROID
+------------ | -------------
+<img src="./readme/iosfinduser.gif" height="600" /> | <img src="./readme/androidfinduser.gif" height="600" />
