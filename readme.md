@@ -10,5 +10,6 @@
 
 
 <p align="center">
-  <img src="./finduser.gif" height="600" />
+  <img src="./readme/iosfinduser.gif" height="600" />
+  <img src="./readme/androidfinduser.gif" height="600" />
 </p>
