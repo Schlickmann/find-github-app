@@ -14,7 +14,7 @@
     <img src="./readme/iosfinduser.gif" height="600" />
     <figcaption>IOS Version</figcaption>
   </figure>
-  &nbsp;&nbsp;
+  &nbsp;
   <figure>
     <img src="./readme/androidfinduser.gif" height="600" />
     <figcaption>Android Version</figcaption>
