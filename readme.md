@@ -9,10 +9,7 @@
 - [x] Github Api
 
 
-<div style="height: 900px;
-  width: 900px;
-  background: #eee;
-  margin: auto;">
+<div style="height: 900px;width: 900px;margin: 10px auto;">
   <table>
     <thead>
       <tr>
