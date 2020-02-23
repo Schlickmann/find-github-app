@@ -8,8 +8,23 @@
 - [x] Styled-Components
 - [x] Github Api
 
-<p align="center">
-  IOS | ANDROID
-  ------------ | -------------
-  <img src="./readme/iosfinduser.gif" height="600" /> | <img src="./readme/androidfinduser.gif" height="600" />
-</p>
+
+<div style="height: 900px;
+  width: 900px;
+  background: #eee;
+  margin: auto;">
+  <table>
+    <thead>
+      <tr>
+        <th>IOS</th>
+        <th>ANDROID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><img src="./readme/iosfinduser.gif" height="600" /></td>
+        <td><img src="./readme/androidfinduser.gif" height="600" /></td>
+      </tr>
+    </tbody>
+  <table>
+</div>
